@@ -1,8 +1,6 @@
 use dotenv::dotenv;
 
-mod activities;
-mod worker;
-mod workflows;
+use activities_examples::worker;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

@@ -9,7 +9,6 @@ struct Response {
     args: HashMap<String, String>,
 }
 
-#[allow(dead_code)]
 pub async fn make_http_request(
     _ctx: ActContext,
     _payload: Option<String>,

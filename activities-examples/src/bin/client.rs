@@ -1,6 +1,4 @@
-mod activities;
-
-use activities::helpers::create_payload;
+use activities_examples::helpers::create_payload;
 
 use nanoid::nanoid;
 
