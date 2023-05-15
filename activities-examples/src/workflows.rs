@@ -5,7 +5,7 @@ use temporal_sdk::{ActivityOptions, WfContext, WfExitValue, WorkflowResult};
 use temporal_sdk_core::protos::temporal::api::common::v1::RetryPolicy;
 use temporal_sdk_core_protos::coresdk::AsJsonPayloadExt;
 
-use crate::helpers::parse_activity_result;
+use temporal_helpers::parse_activity_result;
 
 pub async fn http_workflow(ctx: WfContext) -> WorkflowResult<String> {
     debug!("Inside http workflow");

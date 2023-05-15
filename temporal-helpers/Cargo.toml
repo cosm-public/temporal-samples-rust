@@ -1,25 +1,17 @@
 [package]
-name = "activities-examples"
+name = "temporal-helpers"
 version = "0.1.0"
 edition = "2021"
-default-run = "main"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 anyhow = "1.0.71"
-dotenv = "0.15.0"
-env_logger = "0.10.0"
 log = "0.4.14"
-nanoid = "0.4.0"
-prost-wkt-types = "0.4.1"
-reqwest = { version = "0.11.17", features = ["json"] }
 serde = { version = "1.0.130", features = ["derive"] }
 serde_json = "1.0.68"
 temporal-client = { path = "../../sdk-core/client" }
-temporal-helpers = { path = "../temporal-helpers" }
 temporal-sdk = { path = "../../sdk-core/sdk" }
 temporal-sdk-core = { path = "../../sdk-core/core" }
 temporal-sdk-core-api = { path = "../../sdk-core/core-api" }
 temporal-sdk-core-protos = { path = "../../sdk-core/sdk-core-protos" }
-tokio = { version = "1.28.1", features = ["full"] }

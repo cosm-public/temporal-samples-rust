@@ -9,7 +9,7 @@ use temporal_sdk_core_protos::coresdk::AsJsonPayloadExt;
 use tokio::sync::Mutex;
 use tokio::time::sleep;
 
-use crate::client::get_client;
+use temporal_helpers::client::get_client;
 
 /// Make the http request
 #[derive(Deserialize, Serialize, Debug, Clone)]

@@ -1,7 +1,7 @@
-use activities_examples::client::get_client;
 use nanoid::nanoid;
 
 use temporal_client::WorkflowOptions;
+use temporal_helpers::client::get_client;
 use temporal_sdk_core::WorkflowClientTrait;
 use temporal_sdk_core_protos::coresdk::AsJsonPayloadExt;
 
