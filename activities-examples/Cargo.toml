@@ -20,4 +20,5 @@ temporal-client = { path = "../../sdk-core/client" }
 temporal-sdk = { path = "../../sdk-core/sdk" }
 temporal-sdk-core = { path = "../../sdk-core/core" }
 temporal-sdk-core-api = { path = "../../sdk-core/core-api" }
+temporal-sdk-core-protos = { path = "../../sdk-core/sdk-core-protos" }
 tokio = { version = "1.28.1", features = ["full"] }

@@ -25,7 +25,13 @@ pub async fn start_worker() -> Result<(), Box<dyn std::error::Error>> {
     let mut worker = Worker::new_from_core(Arc::new(core_worker), "activities-examples");
 
     worker.register_activity("make_http_request", activities::make_http_request);
+    worker.register_activity("do_something_async", activities::do_something_async);
+
     worker.register_wf("http_workflow", workflows::http_workflow);
+    worker.register_wf(
+        "async_activity_workflow",
+        workflows::async_activity_workflow,
+    );
 
     worker.run().await?;
 
