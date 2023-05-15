@@ -1,6 +1,6 @@
 # Temporal Rust SDK Samples
 
-This is an attempt to start documenting the rust sdk for temporal and how to use it following some of the examples in typescript.
+This is an attempt to start documenting the rust sdk for temporal and how to use it following some of the examples in typescript. For reference the typescript examples are available at [https://github.com/temporalio/samples-typescript](https://github.com/temporalio/samples-typescript).
 
 ## Installation
 
