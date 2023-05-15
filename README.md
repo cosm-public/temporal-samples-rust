@@ -12,9 +12,9 @@ You can get it here:
 # clone the sdk
 git clone https://github.com/temporalio/sdk-core.git
 # clone this repo
-git clone https://github.com/bdbelevate/samples-rust
+git clone https://github.com/cosm-eng/temporal-samples-rust
 
-cd samples-rust
+cd temporal-samples-rust
 ```
 
 Install the temporal server
