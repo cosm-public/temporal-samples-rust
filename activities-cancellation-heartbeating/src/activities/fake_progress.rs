@@ -14,7 +14,7 @@ pub async fn fake_progress(ctx: ActContext, sleep_interval_ms: u64) -> Result<u6
     info!("Starting fake progress activity");
 
     let starting_point = match ctx.get_heartbeat_details().get(0) {
-        Some(hb) => u64::from_json_payload(hb).expect("Couldn't parse heartbeat"),
+        Some(hb) => u64::from_json_payload(hb)?,
         None => 1,
     };
 
@@ -22,28 +22,32 @@ pub async fn fake_progress(ctx: ActContext, sleep_interval_ms: u64) -> Result<u6
     let ping_handle = ping(ctx.to_owned(), starting_point, sleep_interval_ms);
 
     // wait for either the ping or the cancel handle to finish
+    let mut value = 0;
     tokio::select!(
-        _ = ping_handle => {
+        res = ping_handle => {
             println!("### Activity finished ###");
+            value = res;
         },
         _ = cancel_handle => {
+            // get the last value from the heartbeat
             println!("### Activity canceled <cancel handle> ###");
         }
     );
 
-    Ok(1)
+    Ok(value)
 }
 
-async fn ping(ctx: ActContext, starting_point: u64, sleep_interval_ms: u64) {
+async fn ping(ctx: ActContext, starting_point: u64, sleep_interval_ms: u64) -> u64 {
     let mut count = starting_point;
-    while count <= 25 {
+    while count <= 100 {
         println!("Progress: {}", count);
 
         if ctx.is_cancelled() {
             println!("### Activity canceled <inside ping> ###");
+            break;
         }
 
-        ctx.record_heartbeat(vec![starting_point
+        ctx.record_heartbeat(vec![count
             .as_json_payload()
             .expect("Couldn't serialize heartbeat")]);
 
@@ -51,4 +55,5 @@ async fn ping(ctx: ActContext, starting_point: u64, sleep_interval_ms: u64) {
 
         count += 1;
     }
+    return count;
 }

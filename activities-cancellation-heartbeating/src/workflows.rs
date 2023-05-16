@@ -16,7 +16,7 @@ pub async fn run_cancellable_activity(mut ctx: WfContext) -> WorkflowResult<u64>
         cancellation_type: ActivityCancellationType::TryCancel,
         input: 500.as_json_payload().expect("Unable to serialize"), // payload here is the sleep time
         heartbeat_timeout: Some(Duration::from_secs(3)),
-        start_to_close_timeout: Some(Duration::from_secs(60)),
+        start_to_close_timeout: Some(Duration::from_secs(120)),
         ..Default::default()
     });
 

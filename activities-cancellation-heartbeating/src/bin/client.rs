@@ -31,8 +31,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         "Started workflow_id: {}, run_id: {}",
         workflow_id, handle.run_id
     );
-    info!("Sleeping 5s to allow workflow to run");
-    tokio::time::sleep(Duration::from_secs(5)).await;
+    info!("Sleeping 30s to allow workflow to run");
+    tokio::time::sleep(Duration::from_secs(30)).await;
 
     info!("Requesting cancellation");
     let _cancel_handle = client
