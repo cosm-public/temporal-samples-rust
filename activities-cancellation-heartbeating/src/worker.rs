@@ -27,7 +27,10 @@ pub async fn start_worker() -> Result<(), Box<dyn std::error::Error>> {
         "activities-cancellation-heartbeating",
     );
 
-    worker.register_activity("fake_progress", activities::fake_progress);
+    worker.register_activity("fake_progress_activity", activities::fake_progress_activity);
+    worker.register_activity("skipped_activity", activities::skipped_activity);
+    worker.register_activity("cleanup_activity", activities::cleanup_activity);
+
     worker.register_wf(
         "run_cancellable_activity",
         workflows::run_cancellable_activity,

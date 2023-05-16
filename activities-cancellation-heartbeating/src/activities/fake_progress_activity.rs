@@ -1,16 +1,11 @@
 use log::info;
-use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 use temporal_sdk::ActContext;
 use temporal_sdk_core_protos::coresdk::{AsJsonPayloadExt, FromJsonPayloadExt};
 
-/// Make the http request
-#[derive(Deserialize, Serialize, Debug, Clone)]
-struct Response {
-    args: HashMap<String, String>,
-}
-
-pub async fn fake_progress(ctx: ActContext, sleep_interval_ms: u64) -> Result<u64, anyhow::Error> {
+pub async fn fake_progress_activity(
+    ctx: ActContext,
+    sleep_interval_ms: u64,
+) -> Result<u64, anyhow::Error> {
     info!("Starting fake progress activity");
 
     let starting_point = match ctx.get_heartbeat_details().get(0) {
