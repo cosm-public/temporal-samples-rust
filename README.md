@@ -25,6 +25,7 @@ brew install temporal
 ## API demos
 
 ### Activity APIs and design patterns
-- Activities Examples:
+- [**Activities Examples**](./activities-examples):
   - makeHTTPRequest: Make an external HTTP request in an Activity (using reqwest).
   - doSomethingAsync: Complete an Activity async with AsyncCompletionClient.
+- [**Activity Cancellation and Heartbeating**](./activities-cancellation-heartbeating): Heartbeat progress for long running activities and cancel them. Plus how to skip activities and cleaning up.
