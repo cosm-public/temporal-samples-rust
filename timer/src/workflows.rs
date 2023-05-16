@@ -29,6 +29,9 @@ pub async fn sample_timer_workflow(
         processing_threshold_seconds
     );
 
+    // Note:
+    // You need to use the ctx timer and not a tokio one. If you use a tokio one,
+    // your entire workflow will block waiting for a response from the await.
     let timer_handle = ctx.timer(Duration::from_secs(processing_threshold_seconds));
 
     let shared_lock: Arc<Mutex<bool>> = Arc::new(Mutex::new(false));
