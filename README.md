@@ -35,3 +35,4 @@ brew install temporal
   - makeHTTPRequest: Make an external HTTP request in an Activity (using reqwest).
   - doSomethingAsync: Complete an Activity async with AsyncCompletionClient.
 - [**Activity Cancellation and Heartbeating**](./activities-cancellation-heartbeating): Heartbeat progress for long running activities and cancel them. Plus how to skip activities and cleaning up.
+- [**Timer**](./timer): Timer example to send an email notification for a long running process.
