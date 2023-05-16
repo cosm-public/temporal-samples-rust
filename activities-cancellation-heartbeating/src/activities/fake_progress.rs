@@ -10,15 +10,8 @@ struct Response {
     args: HashMap<String, String>,
 }
 
-/// This should work as expected but seems like a bug in temporal
-/// that the cancellation is not being propagated to the activity
 pub async fn fake_progress(ctx: ActContext, sleep_interval_ms: u64) -> Result<u64, anyhow::Error> {
     info!("Starting fake progress activity");
-
-    if ctx.is_cancelled() {
-        println!("!!! Activity canceled !!!");
-        return Ok(1);
-    }
 
     let starting_point = match ctx.get_heartbeat_details().get(0) {
         Some(hb) => u64::from_json_payload(hb).expect("Couldn't parse heartbeat"),
