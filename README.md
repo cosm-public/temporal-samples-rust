@@ -37,4 +37,4 @@ brew install temporal
   - doSomethingAsync: Complete an Activity async with AsyncCompletionClient.
 - [**Activity Cancellation and Heartbeating**](./activities-cancellation-heartbeating): Heartbeat progress for long running activities and cancel them. Plus how to skip activities and cleaning up.
 - [**Timer**](./timer): Timer example to send an email notification for a long running process.
-- [**schedule**](./timer): Schedule example
+- [**Schedule Workflow**](./schedule): Demonstrates a recurring Workflow Execution that occurs according to the schedule documentation: [Schedule](https://docs.temporal.io/workflows#schedule).
