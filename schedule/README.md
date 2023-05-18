@@ -2,7 +2,7 @@
 
 ## What it does
 
-The client goes through a series of steps related to demonstrate the managing of a schedule. After each step, it pauses for 5 seconds.
+The client goes through a series of steps to demonstrate the managing of a schedule. After each step, it pauses for 5 seconds.
 
 - It creates a future schedule initially paused with an interval of 10s.
 - It updates the schedule to change the interval to every 30s.
