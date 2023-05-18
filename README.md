@@ -16,7 +16,8 @@ You can get it here:
 
 ```
 # clone the sdk
-git clone https://github.com/temporalio/sdk-core.git
+# currently relying on some changes that aren't merged so use the fork
+git clone https://github.com/bdbelevate/sdk-core.git
 # clone this repo
 git clone https://github.com/cosm-eng/temporal-samples-rust
 
@@ -36,3 +37,4 @@ brew install temporal
   - doSomethingAsync: Complete an Activity async with AsyncCompletionClient.
 - [**Activity Cancellation and Heartbeating**](./activities-cancellation-heartbeating): Heartbeat progress for long running activities and cancel them. Plus how to skip activities and cleaning up.
 - [**Timer**](./timer): Timer example to send an email notification for a long running process.
+- [**schedule**](./timer): Schedule example
