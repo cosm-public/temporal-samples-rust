@@ -96,7 +96,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .await?;
 
-    println!("Schedule manually updated: {}", schedule_id);
+    println!("Schedule manually triggered: {}", schedule_id);
     tokio::time::sleep(Duration::from_secs(5)).await;
 
     // unpause the schedule
