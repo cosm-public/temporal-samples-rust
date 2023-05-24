@@ -24,3 +24,7 @@ cargo run
 # in yet another terminal, run the client to create and modify the schedule
 cargo run --bin client
 ```
+
+## Notes
+
+Since temporal lib doesn't currently support schedules, this uses the raw grpc client. It makes it a bit messier but it works. Will consider wrapping that in a new PR to temporal to clena that up.

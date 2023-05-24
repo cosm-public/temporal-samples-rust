@@ -16,8 +16,7 @@ You can get it here:
 
 ```
 # clone the sdk
-# currently relying on some changes that aren't merged so use the fork
-git clone https://github.com/bdbelevate/sdk-core.git
+git clone https://github.com/temporalio/sdk-core.git
 # clone this repo
 git clone https://github.com/cosm-eng/temporal-samples-rust
 
