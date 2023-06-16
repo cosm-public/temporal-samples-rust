@@ -13,7 +13,9 @@ pub async fn make_http_request(
     _ctx: ActContext,
     _payload: Option<String>,
 ) -> Result<String, anyhow::Error> {
-    let response = reqwest::get("http://httpbin.org/get?answer=42")
+    let id = nanoid::nanoid!();
+    info!("Starting http request activity: {}", id);
+    let response = reqwest::get(format!("https://httpbin.org/get?answer={}", id))
         .await?
         .json::<Response>()
         .await?;
